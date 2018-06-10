@@ -8,7 +8,7 @@ Add Giphy support in your draft-js editor
 ## Installation
 
 ```
-npm install draft-js-giphy-plugin
+npm install @jimmycode/draft-js-giphy-plugin
 ```
 
 ## Usage
