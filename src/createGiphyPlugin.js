@@ -68,7 +68,6 @@ export default ({
         };
       }
       else if (getCurrentBlock(getEditorState()).getType() === explorerType) {
-        console.log(getCurrentBlock(getEditorState()));
         return {
           component: ThemedExplorer,
           editable: false,
