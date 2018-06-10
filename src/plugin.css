@@ -83,20 +83,18 @@
 }
 
 .giphy {
-  max-width: 100%;
   height: auto;
-  display: inline-block;
+  width: auto;
   position: relative;
 }
 
-.giphy img {
-  display: block;
-  width: 100%;
+.giphyGif {
   height: auto;
+  display: block;
 }
 
 .giphyBrand {
-  font-size: 0.8em;
+  font-size: 0.65em;
   font-family: inherit;
   display: inline-block;
   font-weight: 600;

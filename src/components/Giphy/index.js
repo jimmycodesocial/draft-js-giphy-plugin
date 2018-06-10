@@ -4,13 +4,8 @@ import unionClassNames from 'union-class-names';
 export default class Giphy extends React.PureComponent {
   render () {
     const {
-      block,
-      className,
-      theme = {},
-      ...otherProps
-    } = this.props;
-
-    const {
+      theme,
+      block, // eslint-disable-line no-unused-vars
       blockProps, // eslint-disable-line no-unused-vars
       customStyleMap, // eslint-disable-line no-unused-vars
       customStyleFn, // eslint-disable-line no-unused-vars
@@ -19,10 +14,12 @@ export default class Giphy extends React.PureComponent {
       offsetKey, // eslint-disable-line no-unused-vars
       selection, // eslint-disable-line no-unused-vars
       tree, // eslint-disable-line no-unused-vars
-      contentState,
-      blockStyleFn,
+      contentState, // eslint-disable-line no-unused-vars
+      blockStyleFn, // eslint-disable-line no-unused-vars
+      style,
+      className,
       ...elementProps
-    } = otherProps;
+    } = this.props;
 
     const combinedClassName = unionClassNames(theme.giphy, className);
     const gifData = contentState.getEntity(block.getEntityAt(0)).getData();
@@ -39,9 +36,11 @@ export default class Giphy extends React.PureComponent {
 
     return (
       <div 
-        className={combinedClassName}
-        width={gif.width}
-        height={gif.height}
+        className={combinedClassName} 
+        style={{
+          width: +gif.width,
+          ...style
+        }}
         {...elementProps}>
 
         {withLink ? <a href={gifData.url} target="_blank">{image}</a> : image}
