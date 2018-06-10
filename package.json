@@ -76,6 +76,7 @@
   "dependencies": {
     "draft-js-toolbox": "^0.5.3",
     "giphy-js-sdk-core": "^1.0.3",
+    "prop-types": "^15.6.1",
     "union-class-names": "^1.0.0"
   }
 }
