@@ -1,0 +1,142 @@
+.explorer {
+  z-index: 100; 
+}
+
+.explorer:focus {
+  outline: none;
+}
+
+.explorerInput {
+  width: 100%;
+  outline: none;
+  font-size: inherit;
+  font-family: inherit;
+  width: 100%;
+  border: 0;
+  border-bottom: 1px solid rgba(0, 0, 0, .15);
+  font-weight: 400; 
+  padding: 5px 0px;  
+}
+
+.explorerResults {
+  outline: none;
+}
+
+.explorerResultsImage {
+  background-color: #fff;
+  cursor: pointer;
+  overflow: hidden;
+  float: left;
+  position: relative;
+}
+
+.explorerResultsImage img {
+  display: block;
+  transition: transform .135s cubic-bezier(0.0,0.0,0.2,1), opacity linear .15s;
+}
+
+.explorerPagination {
+  display: flex;
+  font-size: 15px;
+  height: 40px;
+  line-height: 1.4;
+  color: rgba(0,0,0,.54);
+  outline: none;
+}
+
+.explorerPaginationPrev {
+  text-align: left; 
+  flex: 1 1 auto; 
+  margin: auto;
+  outline: none;
+}
+
+.explorerPaginationTotal {
+  font-size: inherit;
+  font-family: inherit;
+  text-align: center; 
+  flex: 1 1 auto; 
+  margin: auto;
+  outline: none;
+}
+
+.explorerPaginationNext {
+  text-align: right; 
+  flex: 1 1 auto; 
+  margin: auto;
+  outline: none;
+}
+
+.explorerPaginationButton {
+  font-size: inherit;
+  font-family: inherit;
+  border-width: 0; 
+  padding: 0; 
+  white-space: normal; 
+  vertical-align: baseline; 
+  color: rgba(0,0,0,.54);
+  background: rgba(0,0,0,0);
+  text-decoration: none;
+  cursor: pointer;
+  display: inline-block;
+  outline: none;
+}
+
+.giphy {
+  max-width: 100%;
+  height: auto;
+  display: inline-block;
+  position: relative;
+}
+
+.giphy img {
+  display: block;
+  width: 100%;
+  height: auto;
+}
+
+.giphyBrand {
+  font-size: 0.8em;
+  font-family: inherit;
+  display: inline-block;
+  font-weight: 600;
+  height: 30px;
+  line-height: 32px;
+  text-decoration: none;
+}
+
+.giphyBrand a {
+  text-decoration: none;
+  color: inherit;
+}
+
+.giphyBrand svg {
+  display: inline-block;
+  height: 20px;
+  vertical-align: top;
+  margin: 5px;
+}
+
+.giphyBrandOverlay {
+  display: none;
+  position: absolute; 
+  top: 0;
+  left: 0;
+  height: 100%;
+  background: rgba(0,0,0,.54);
+  font-size: 16px;
+  width: 100%;
+  height: 100%;
+}
+
+.giphyBrandOverlay img {
+  width: 100px;
+  height: 27px;
+  position: absolute;
+  right: 5px;
+  top: 5px;
+}
+
+.giphy:hover .giphyBrandOverlay {
+  display: block;
+}
