@@ -40,6 +40,7 @@ export default ({
   giphyType = 'giphy',
   decorator = (component) => component,
   giphyComponent = Giphy,
+  editable = false
 }) => {
   // Modifiers.
   const addGiphyExplorer = (editorState, data = {}) => addBlock(editorState, explorerType, data);
@@ -58,7 +59,7 @@ export default ({
       if (isBlockWithEntityType(getEditorState(), block, giphyType)) {
         return {
           component: ThemedGiphy,
-          editable: false,
+          editable,
           props: {
             renditionKey: pluginOptions.renditionKey,
             showBrand: pluginOptions.showBrand,
