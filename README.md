@@ -157,6 +157,106 @@ class MyEditor extends React.Component {
 
 ReactDOM.render(<MyEditor />, document.getElementById('root'));
 ```
+In this other example you can see how integrate the plugin with `draft-js-image-plugin`.
+
+## Integration
+
+#### With other plugins
+
+In this example you can see how integrate the plugin with `draft-js-focus-plugin` and `draft-js-alignment-plugin`. 
+
+```
+npm install draft-js-focus-plugin draft-js-alignment-plugin
+```
+
+```js
+import React from 'react';
+import ReactDOM from 'react-dom';
+
+import Editor, { composeDecorators } from 'draft-js-plugins-editor';
+import { EditorState } from 'draft-js';
+import createSideToolbarPlugin from 'draft-js-side-toolbar-plugin';
+import BlockTypeSelect from 'draft-js-side-toolbar-plugin/lib/components/BlockTypeSelect';
+import createFocusPlugin from 'draft-js-focus-plugin';
+import createAlignmentPlugin from 'draft-js-alignment-plugin';
+import createGiphyPlugin from 'draft-js-giphy-plugin';
+
+import 'draft-js-side-toolbar-plugin/lib/plugin.css';
+import 'draft-js-focus-plugin/lib/plugin.css';
+import 'draft-js-alignment-plugin/lib/plugin.css';
+import 'draft-js-giphy-plugin/lib/plugin.css';
+
+const focusPlugin = createFocusPlugin();
+const alignmentPlugin = createAlignmentPlugin();
+const { AlignmentTool } = alignmentPlugin;
+
+const decorator = composeDecorators(
+  alignmentPlugin.decorator,
+  focusPlugin.decorator
+);
+
+const giphyPlugin = createGiphyPlugin({
+  decorator, // Here! - the plugin accepts a decorator.
+  options: {
+    apiKey: '<my-api-key>',
+    wdithLink: false
+  },
+});
+
+const DefaultBlockTypeSelect = ({ getEditorState, setEditorState, theme }) => (
+  <BlockTypeSelect
+    getEditorState={getEditorState}
+    setEditorState={setEditorState}
+    theme={theme}
+    structure={[ 
+      giphyPlugin.GihpyButton
+    ]} />
+);
+
+const sideToolbarPlugin = createSideToolbarPlugin({
+  structure: [DefaultBlockTypeSelect],
+});
+const { SideToolbar } = sideToolbarPlugin;
+
+class MyEditor extends React.Component {
+  constructor(props) {
+    super(props);
+    this.state = {
+      editorState: EditorState.createEmpty()
+    };
+    this.plugins = [
+      sideToolbarPlugin,
+      focusPlugin,
+      alignmentPlugin,
+      giphyPlugin
+    ];
+  }
+
+  onChange = (editorState) => {
+    this.setState({ editorState });
+  }
+
+  render() {
+    const { editorState } = this.state;
+
+    return (
+      <div className='editor'>
+        <Editor
+          editorState={editorState}
+          onChange={this.onChange}
+          plugins={this.plugins}
+          placeholder="Share your story" />
+
+        <SideToolbar />
+        <AlignmentTool />
+      </div>
+    );
+  }
+}
+
+ReactDOM.render(<MyEditor />, document.getElementById('root'));
+
+```
 
 # Acknowledge
 * Icon by: https://www.iconfinder.com/icons/315666/file_gif_icon
