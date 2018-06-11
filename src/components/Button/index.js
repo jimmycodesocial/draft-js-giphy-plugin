@@ -1,7 +1,7 @@
 import React from 'react';
 import PropTypes from 'prop-types';
 import unionClassNames from 'union-class-names';
-import { isCurrentBlockType } from 'draft-js-toolbox';
+import { isCurrentBlockType } from '@jimmycode/draft-js-toolbox';
 
 /**
  * Icon by: https://www.iconfinder.com/icons/315666/file_gif_icon

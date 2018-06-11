@@ -1,6 +1,6 @@
 import decorateComponentWithProps from 'decorate-component-with-props';
 import { getDefaultKeyBinding } from 'draft-js';
-import { isBlockWithEntityType, getCurrentBlock, addBlock, addAtomicBlock, removeBlock } from 'draft-js-toolbox';
+import { isBlockWithEntityType, getCurrentBlock, addBlock, addAtomicBlock, removeBlock } from '@jimmycode/draft-js-toolbox';
 import { GihpyButton, Explorer, Giphy } from './components';
 import { translateTextToGif, trendingGifs, searchGifs } from './utils';
 import defaultTheme from './plugin.css';

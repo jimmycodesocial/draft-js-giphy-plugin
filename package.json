@@ -1,6 +1,6 @@
 {
   "name": "@jimmycode/draft-js-giphy-plugin",
-  "version": "0.5.1",
+  "version": "1.0.0",
   "description": "Add Giphy support in your draft-js editor",
   "keywords": [
     "draft-js",
@@ -74,8 +74,8 @@
     "webpack-node-externals": "^1.7.2"
   },
   "dependencies": {
+    "@jimmycode/draft-js-toolbox": "^0.5.5",
     "decorate-component-with-props": "^1.1.0",
-    "draft-js-toolbox": "^0.5.3",
     "giphy-js-sdk-core": "^1.0.3",
     "prop-types": "^15.6.1",
     "react-photo-gallery": "^6.0.28",

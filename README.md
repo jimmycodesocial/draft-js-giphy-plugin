@@ -16,7 +16,7 @@ npm install @jimmycode/draft-js-giphy-plugin
 This plugin uses the GIPHY API, so you'll need to obtain an API Key by [creating an app](https://developers.giphy.com/dashboard/?create=true).
 
 ```js
-import createGiphyPlugin from 'draft-js-giphy-plugin';
+import createGiphyPlugin from '@jimmycode/draft-js-giphy-plugin';
 
 const giphyPlugin = createGiphyPlugin({
   options: {
@@ -31,7 +31,7 @@ const { GihpyButton } = giphyPlugin;
 
 | Param          | Default                          | Description                                                                                                                                                                                                                                              |
 |----------------|----------------------------------|----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------|
-| theme          | Default styles                   | draft-js-giphy-plugin/lib/plugin.css                                                                                                                                                                                                                     |
+| theme          | Default styles                   | @jimmycode/draft-js-giphy-plugin/lib/plugin.css                                                                                                                                                                                                          |
 | options        | Default behavior                 | List of options.                                                                                                                                                                                                                                         |
 | explorerType   | 'draft-js-giphy-plugin-explorer' | Type of entity created when inserting the explorer block.                                                                                                                                                                                                |
 | giphyType      | 'giphy'                          | Type of entity created when inserting the GIF.                                                                                                                                                                                                           |
@@ -58,7 +58,7 @@ const { GihpyButton } = giphyPlugin;
 | params               | `{sort: 'relevant'}`               | Query parameters to include in the URL. See 'rating', 'sort' and 'lang' at https://developers.giphy.com/docs/#tech-docs          |
 
 ## Theming
-The plugin ships with a default styling available at this location in the installed package: `node_modules/draft-js-giphy-plugin/lib/plugin.css`
+The plugin ships with a default styling available at this location in the installed package: `node_modules/@jimmycode/draft-js-giphy-plugin/lib/plugin.css`
 
 *Webpack Usage*
 1.  Install Webpack loaders: `npm i style-loader css-loader --save-dev`
@@ -82,7 +82,7 @@ module.exports = {
 3.  Add the below import line to your component to tell Webpack to inject the style to your component.
 
 ```js
-import 'draft-js-giphy-plugin/lib/plugin.css';
+import '@jimmycode/draft-js-giphy-plugin/lib/plugin.css';
 ```
 
 ## Example
@@ -95,10 +95,10 @@ import Editor from 'draft-js-plugins-editor';
 import { EditorState } from 'draft-js';
 import createSideToolbarPlugin from 'draft-js-side-toolbar-plugin';
 import BlockTypeSelect from 'draft-js-side-toolbar-plugin/lib/components/BlockTypeSelect';
-import createGiphyPlugin from 'draft-js-giphy-plugin';
+import createGiphyPlugin from '@jimmycode/draft-js-giphy-plugin';
 
 import 'draft-js-side-toolbar-plugin/lib/plugin.css';
-import 'draft-js-giphy-plugin/lib/plugin.css';
+import '@jimmycode/draft-js-giphy-plugin/lib/plugin.css';
 
 const giphyPlugin = createGiphyPlugin({
   options: {
@@ -179,12 +179,12 @@ import createSideToolbarPlugin from 'draft-js-side-toolbar-plugin';
 import BlockTypeSelect from 'draft-js-side-toolbar-plugin/lib/components/BlockTypeSelect';
 import createFocusPlugin from 'draft-js-focus-plugin';
 import createAlignmentPlugin from 'draft-js-alignment-plugin';
-import createGiphyPlugin from 'draft-js-giphy-plugin';
+import createGiphyPlugin from '@jimmycode/draft-js-giphy-plugin';
 
 import 'draft-js-side-toolbar-plugin/lib/plugin.css';
 import 'draft-js-focus-plugin/lib/plugin.css';
 import 'draft-js-alignment-plugin/lib/plugin.css';
-import 'draft-js-giphy-plugin/lib/plugin.css';
+import '@jimmycode/draft-js-giphy-plugin/lib/plugin.css';
 
 const focusPlugin = createFocusPlugin();
 const alignmentPlugin = createAlignmentPlugin();
