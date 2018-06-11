@@ -1,6 +1,6 @@
 {
   "name": "@jimmycode/draft-js-giphy-plugin",
-  "version": "1.0.1",
+  "version": "1.0.2",
   "description": "Add Giphy support in your draft-js editor",
   "keywords": [
     "draft-js",
@@ -20,7 +20,7 @@
       "url": "https://www.linkedin.com/in/albertomr86/"
     }
   ],
-  "homepage": "https://github.com/jimmycodesocial/draft-js-giphy-plugine",
+  "homepage": "https://github.com/jimmycodesocial/draft-js-giphy-plugin",
   "bugs": "https://github.com/jimmycodesocial/draft-js-giphy-plugin/issues",
   "repository": {
     "type": "git",
